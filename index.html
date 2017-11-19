@@ -20,15 +20,15 @@
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <!-- Brand -->
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">ClassicsLogo</a>
 
-        <!-- Toggler/collapsive Button -->
+        <!-- Toggler/collapsible Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav nav-pills">
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Main</a>
                 </li>
@@ -48,6 +48,36 @@
         </div>
     </nav>
 
+    <div id="slideshow" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#slideshow" data-slide-to="0" class="active"></li>
+            <li data-target="#slideshow" data-slide-to="1"></li>
+            <li data-target="#slideshow" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner" item-height="500">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="images/IMG-20171021-WA0022.jpg" alt="Basketball">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="images/IMG-20171021-WA0022.jpg" alt="Football">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="images/IMG-20171021-WA0022.jpg" alt="Indoor Football">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#slideshow" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#slideshow" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+
+    </div>
 
 </body>
 
