@@ -13,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-    <style src="css/main.css"></style>
+    <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/main.css">
     
 </head>
@@ -32,19 +32,19 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav nav">
                 <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" onclick="" href="#home">Home</a>
+                    <a class="nav-link active" data-toggle="collapse" data-target=".navbar-collapse" onclick="toggleView(event)" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#basket">Basketball</a>
+                    <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" onclick="toggleView(event)" href="#basket">Basketball</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#football">Football</a>
+                    <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" onclick="toggleView(event)" href="#football">Football</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#indoor">Indoor Football</a>
+                    <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" onclick="toggleView(event)"href="#indoor">Indoor Football</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#press">Press Room</a>
+                    <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" onclick="toggleView(event)" href="#press">Press Room</a>
                 </li>
             </ul>
         </div>
