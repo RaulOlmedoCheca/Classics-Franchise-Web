@@ -1,1 +1,7 @@
-
+.tab-content {
+    margin-top: 56px;
+    
+}
+.tab-pane {
+    padding: 0;
+}
