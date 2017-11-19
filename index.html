@@ -28,56 +28,90 @@
         </button>
 
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Main</a>
+                    <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Basketball</a>
+                    <a class="nav-link" data-toggle="tab" href="#basket">Basketball</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Football</a>
+                    <a class="nav-link" data-toggle="tab" href="#football">Football</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Indoor Football</a>
+                    <a class="nav-link" data-toggle="tab" href="#indoor">Indoor Football</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Press Room</a>
+                    <a class="nav-link" data-toggle="tab" href="#press">Press Room</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <div id="slideshow" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ul class="carousel-indicators">
-            <li data-target="#slideshow" data-slide-to="0" class="active"></li>
-            <li data-target="#slideshow" data-slide-to="1"></li>
-            <li data-target="#slideshow" data-slide-to="2"></li>
-        </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane active container col-sm-12" id="home">
+            <div id="slideshow" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#slideshow" data-slide-to="0" class="active"></li>
+                    <li data-target="#slideshow" data-slide-to="1"></li>
+                    <li data-target="#slideshow" data-slide-to="2"></li>
+                </ul>
 
-        <!-- The slideshow -->
-        <div class="carousel-inner" item-height="500">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="images/IMG-20171021-WA0022.jpg" alt="Basketball">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="images/IMG-20171021-WA0022.jpg" alt="Football">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="images/IMG-20171021-WA0022.jpg" alt="Indoor Football">
+                <!-- The slideshow -->
+                <div class="carousel-inner" item-height="500">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="images/IMG-20171021-WA0022.jpg" alt="Basketball">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="images/IMG-20171021-WA0022.jpg" alt="Football">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="images/IMG-20171021-WA0022.jpg" alt="Indoor Football">
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#slideshow" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#slideshow" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+
             </div>
         </div>
-
-        <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#slideshow" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#slideshow" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </a>
-
+        <div class="tab-pane container col-sm-12" id="basket">
+            <h1>
+                Tu 
+            </h1>
+        </div>
+        <div class="tab-pane container col-sm-12" id="football">
+            <h1>
+                mama
+            </h1>
+        </div>
+        <div class="tab-pane container col-sm-12" id="indoor">
+            <h1>
+                es
+            </h1>
+        </div>
+        <div class="tab-pane container col-sm-12" id="press">
+            <h1>
+                puta
+            </h1>
+        </div>
     </div>
+    <style>
+        .tab-content {
+            margin-top: 56px;
+            
+        }
+        .tab-pane {
+            padding: 0;
+        }
+    </style>
 
 </body>
 
