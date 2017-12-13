@@ -2,3 +2,4 @@
 Web page of the infamous sport franchise based on Moratalaz
 
 //TODO: add travis & codacy badges 
+//TODO: set up travis settings
