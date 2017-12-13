@@ -1,7 +1,10 @@
 $(document).ready(function () {
   $('.target').pushpin();
-  $('.parallax').parallax();
 });
+var elem = document.querySelector('.parallax');
+var instance1 = new M.Parallax(elem, options);
+var elem = document.querySelector('.scrollspy');
+var instance2 = new M.ScrollSpy(elem, options);
 
 $('.pushpin-demo-nav').each(function () {
   var $this = $(this);
@@ -13,4 +16,5 @@ $('.pushpin-demo-nav').each(function () {
 });
 
 // Get the project instance (for curiosity purposes)
-var instance = M.Parallax.getInstance(elem);
+// var instance1 = M.Parallax.getInstance(elem);
+// var instance2 = M.ScrollSpy.getInstance(elem);
