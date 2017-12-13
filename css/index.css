@@ -1,0 +1,7 @@
+html, body, .block {
+  height: 100%;
+}
+     
+.parallax-container {
+  height: 500px;
+}
