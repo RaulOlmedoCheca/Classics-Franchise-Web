@@ -8,7 +8,7 @@ p {
 }
 
 .sidenav-trigger {
-  color: #26a69a;
+  color: teal;
 }
 
 .parallax-container {
@@ -17,33 +17,51 @@ p {
   height: auto;
   color: rgba(255,255,255,.9);
 }
-  .parallax-container .section {
-    width: 100%;
-  }
 
-@media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
-}
-
-@media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
-  }
+.parallax-container .section {
+  width: 100%;
 }
 
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
   font-size: inherit;
 }
 
 footer.page-footer {
   margin: 0;
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #parallax1 .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #parallax1 .section {
+    top: 0;
+  }
+}
+
+main > div {
+margin-top: 48px;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+  color: teal;
+}
+
+.tabs .tab a {
+  color: #80cbc4;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
