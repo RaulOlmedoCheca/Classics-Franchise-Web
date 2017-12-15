@@ -34,3 +34,7 @@ main div#roster.container, main div#coaching-staff.container {
 .uppercase {
   text-transform: uppercase;
 }
+
+.footer-copyright a{
+  color: white !important;
+}
