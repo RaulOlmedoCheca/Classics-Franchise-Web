@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- TODO: implement animations when loading this pages -->
 
   <head>
     <title>Basketball</title>
@@ -10,7 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css" media="screen,projection" /> </head>
+    <link rel="stylesheet" type="text/css" href="css/basketball.css" media="screen,projection" /> </head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111248524-1"></script>
   <script>
@@ -20,5 +21,384 @@
 
     gtag('config', 'UA-111248524-1');
   </script>
+
+  <body>
+    <header>
+      <div class="navbar-fixed">
+        <nav class="nav-extended white">
+          <div class="nav-wrapper container">
+            <a id="logo-container" href="index.html" class="brand-logo">Classics Franchise</a>
+            <ul class="right hide-on-med-and-down">
+              <!-- Links on desktop nav -->
+              <li>
+                <a class="uppercase" href="#">Football</a>
+              </li>
+              <li>
+                <a class="uppercase" href="#">Indoor football</a>
+              </li>
+              <li class="active">
+                <a class="uppercase" href="basketball.html">Basketball</a>
+              </li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+              <i class="material-icons">menu</i>
+            </a>
+          </div>
+          <!-- TODO: do this sticky (with pushpin) && scrollspy-->
+          <!-- TODO: add bar at bottom of tabs -->
+          <!-- TODO: add shadow like on the navbar -->
+          <div class="nav-content container">
+            <ul class="tabs">
+              <li class="tab">
+                <a class="active" href="#roster">Roster</a>
+              </li>
+              <li class="tab">
+                <a href="#section1">Section 1</a>
+              </li>
+              <!-- TODO: add ad the bottom a line to show the selected tab (like in a tab component) -->
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <ul id="nav-mobile" class="sidenav">
+        <!-- Links on mobile nav -->
+        <li>
+          <a class="uppercase" href="#">Football</a>
+        </li>
+        <li>
+          <a class="uppercase" href="#">Indoor football</a>
+        </li>
+        <li>
+          <a class="uppercase" href="basketball.html">Basketball</a>
+        </li>
+      </ul>
+    </header>
+    <main>
+      <div id="roster" class="scrollspy container">
+        <div class="row">
+          <!-- TODO: centrar el nombre en mobile (classics) y esto tambien -->
+          <h3>Roster</h3>
+          <div class="col s10 m6 l4 offset-s1">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/sample-1.jpg">
+                <!-- TODO: meter aqui un feature discovery -->
+                <a class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red activator hoverable">
+                  <i class="material-icons">add</i>
+                </a>
+                <!-- TODO: meter aqui una sombra -->
+                <span class="card-title">1</span>
+              </div>
+              <div class="card-content">
+                <span class="card-title">Juancho</span>
+                <p class="grey-text">Point Guard</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title
+                  <i class="material-icons right">close</i>
+                </span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s10 m6 l4 offset-s1">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/sample-1.jpg">
+                <a class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red activator hoverable">
+                  <i class="material-icons">add</i>
+                </a>
+                <span class="card-title">34</span>
+              </div>
+              <div class="card-content">
+                <span class="card-title">Vega</span>
+                <p class="grey-text">Point Guard</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title
+                  <i class="material-icons right">close</i>
+                </span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s10 m6 l4 offset-s1">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/sample-1.jpg">
+                <a class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red activator hoverable">
+                  <i class="material-icons">add</i>
+                </a>
+                <span class="card-title">18</span>
+              </div>
+              <div class="card-content">
+                <span class="card-title">Charly</span>
+                <p class="grey-text">Point Guard - Shooting Guard</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title
+                  <i class="material-icons right">close</i>
+                </span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s10 m6 l4 offset-s1">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/sample-1.jpg">
+                <a class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red activator hoverable">
+                  <i class="material-icons">add</i>
+                </a>
+                <span class="card-title">19</span>
+              </div>
+              <div class="card-content">
+                <span class="card-title">Guitian</span>
+                <p class="grey-text">Safe Guard - Small Forward</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title
+                  <i class="material-icons right">close</i>
+                </span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s10 m6 l4 offset-s1">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/sample-1.jpg">
+                <a class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red activator hoverable">
+                  <i class="material-icons">add</i>
+                </a>
+                <span class="card-title">3</span>
+              </div>
+              <div class="card-content">
+                <span class="card-title">Marcos</span>
+                <p class="grey-text">Power Forward</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title
+                  <i class="material-icons right">close</i>
+                </span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s10 m6 l4 offset-s1">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/sample-1.jpg">
+                <a class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red activator hoverable">
+                  <i class="material-icons">add</i>
+                </a>
+                <span class="card-title">21</span>
+              </div>
+              <div class="card-content">
+                <span class="card-title">Pepe</span>
+                <p class="grey-text">Shooting Guard - Small Forward - Power Formward</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title
+                  <i class="material-icons right">close</i>
+                </span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s10 m6 l4 offset-s1">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/sample-1.jpg">
+                <a class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red activator hoverable">
+                  <i class="material-icons">add</i>
+                </a>
+                <span class="card-title">7</span>
+              </div>
+              <div class="card-content">
+                <span class="card-title">Demi</span>
+                <p class="grey-text">Small Forward - Power Forward</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title
+                  <i class="material-icons right">close</i>
+                </span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s10 m6 l4 offset-s1">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/sample-1.jpg">
+                <a class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red activator hoverable">
+                  <i class="material-icons">add</i>
+                </a>
+                <span class="card-title">00</span>
+              </div>
+              <div class="card-content">
+                <span class="card-title">Nico</span>
+                <p class="grey-text">Small Forward - Power Forward</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title
+                  <i class="material-icons right">close</i>
+                </span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s10 m6 l4 offset-s1">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/sample-1.jpg">
+                <a class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red activator hoverable">
+                  <i class="material-icons">add</i>
+                </a>
+                <span class="card-title">16</span>
+              </div>
+              <div class="card-content">
+                <span class="card-title">Marcos</span>
+                <p class="grey-text">Power Forward</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title
+                  <i class="material-icons right">close</i>
+                </span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s10 m6 l4 offset-s1">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/sample-1.jpg">
+                <a class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red activator hoverable">
+                  <i class="material-icons">add</i>
+                </a>
+                <span class="card-title">17</span>
+              </div>
+              <div class="card-content">
+                <span class="card-title">Herráez</span>
+                <p class="grey-text">De todo menos lo que deberia</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title
+                  <i class="material-icons right">close</i>
+                </span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s10 m6 l4 offset-s1">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/sample-1.jpg">
+                <a class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red activator hoverable">
+                  <i class="material-icons">add</i>
+                </a>
+                <span class="card-title">10</span>
+              </div>
+              <div class="card-content">
+                <span class="card-title">Arjona</span>
+                <p class="grey-text">Center</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title
+                  <i class="material-icons right">close</i>
+                </span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s10 m6 l4 offset-s1">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/sample-1.jpg">
+                <a class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red activator hoverable">
+                  <i class="material-icons">add</i>
+                </a>
+                <span class="card-title">14</span>
+              </div>
+              <div class="card-content">
+                <span class="card-title">Jesús</span>
+                <p class="grey-text">Small Forward</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title
+                  <i class="material-icons right">close</i>
+                </span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s10 m6 l4 offset-s1">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/sample-1.jpg">
+                <a class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red activator hoverable">
+                  <i class="material-icons">add</i>
+                </a>
+                <span class="card-title">X</span>
+              </div>
+              <div class="card-content">
+                <span class="card-title">Gabi</span>
+                <p class="grey-text">Power Forward - Center</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title
+                  <i class="material-icons right">close</i>
+                </span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div id="section1" class="scrollspy container">
+
+      </div>
+    </main>
+
+    <footer class="page-footer teal">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Title</h5>
+            <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+              et dolore magna aliqua. </p>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Title</h5>
+            <ul>
+              <li>
+                <a class="white-text" href="#!">Link 1</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Title</h5>
+            <ul>
+              <li>
+                <a class="white-text" href="#!">Link</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container"> Made with
+          <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/basketball.js"></script>
+
+  </body>
 
 </html>

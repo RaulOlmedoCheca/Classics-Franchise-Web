@@ -50,8 +50,8 @@ footer.page-footer {
   }
 }
 
-main > div {
-margin-top: 48px;
+main div#roster.scrollspy.container {
+  padding-top: 48px;
 }
 
 .tabs .tab a:hover, .tabs .tab a.active {
