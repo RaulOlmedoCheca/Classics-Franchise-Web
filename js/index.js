@@ -1,8 +1,7 @@
-(function($){
-  $(function(){
+$(document).ready(function () {
+  $('.sidenav').sidenav();
+  $('.parallax').parallax();
+  $('.scrollspy').scrollSpy();
+});
 
-    $('.sidenav').sidenav();
-    $('.parallax').parallax();
-
-  }); // end of document ready
-})(jQuery); // end of jQuery name space
+//apply active class and <li style="left: 0px; right: 768px;" class="indicator"></li>
