@@ -1,8 +1,16 @@
-$(document).ready(function () {
-  $('.sidenav').sidenav();
-  $('.parallax').parallax();
-  $('.scrollspy').scrollSpy();
-});
+// Setup parallax elements
+var parallaxElements = document.querySelectorAll('.parallax');
 
-M.ScrollSpy.getInstance(elem);
-//apply active class and <li style="left: 0px; right: 768px;" class="indicator"></li>
+for (let index = 0; index < parallaxElements.length; index++) {
+  new M.Parallax(parallaxElements[index]);
+}
+
+// Setup sidenav
+new M.Sidenav(document.querySelector('.sidenav'));
+
+// Setup scrollspy elements
+var scrollSpyElements = document.querySelectorAll('.scrollspy');
+
+for (let index = 0; index < scrollSpyElements.length; index++) {
+  new M.ScrollSpy(scrollSpyElements[index]);
+}
