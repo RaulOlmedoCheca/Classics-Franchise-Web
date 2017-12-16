@@ -15,7 +15,7 @@ footer.page-footer {
   margin: 0;
 }
 
-main div#roster.container, main div#coaching-staff.container {
+main div#roster.container, main div#stats.container {
   padding-top: 48px;
 }
 
@@ -37,4 +37,8 @@ main div#roster.container, main div#coaching-staff.container {
 
 .footer-copyright a{
   color: white !important;
+}
+
+div#stats div.card {
+  background-color:#26a69a;
 }
