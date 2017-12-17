@@ -10,15 +10,20 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css" media="screen,projection" /> </head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111248524-1"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css" media="screen,projection" />
+  </head>
+  <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-111248524-1');
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCwSoVs3MRzGuevvD7ETQAN6nZ3643OKPQ",
+      authDomain: "classics-franchise-web.firebaseapp.com",
+      databaseURL: "https://classics-franchise-web.firebaseio.com",
+      projectId: "classics-franchise-web",
+      storageBucket: "classics-franchise-web.appspot.com",
+      messagingSenderId: "880589943801"
+    };
+    firebase.initializeApp(config);
   </script>
   <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
 
@@ -214,16 +219,18 @@
         </div>
       </div>
       <div class="footer-copyright">
-          <div class="container">
-            <i class="fas fa-code"></i>
-            <span>with</span>
-            <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>  
-            <div class="right">
-                <span>See this project on</span>
-                <a href="https://github.com/RaulOlmedoCheca/Classics-Franchise-Web"><i class="fab fa-github fa-lg"></i></a>
-            </div>  
+        <div class="container">
+          <i class="fas fa-code"></i>
+          <span>with</span>
+          <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+          <div class="right">
+            <span>See this project on</span>
+            <a href="https://github.com/RaulOlmedoCheca/Classics-Franchise-Web">
+              <i class="fab fa-github fa-lg"></i>
+            </a>
           </div>
         </div>
+      </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
