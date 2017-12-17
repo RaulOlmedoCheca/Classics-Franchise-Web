@@ -1,14 +1,20 @@
-var tabsInstance = new M.Tabs(document.querySelector('.tabs'), {
-    //swipeable: true //FIXME: this fucks up everything
-});
+var tabsElements = document.querySelectorAll('.tabs');
+for (let index = 0; index < tabsElements.length; index++) {
+    new M.Tabs(tabsElements[index], {
+        //swipeable: true //FIXME: this fucks up everything
+    });
+}
 
 // Setup sidenav
 new M.Sidenav(document.querySelector('.sidenav'));
 
-var modalElements = document.querySelectorAll('.modal');
-for (let index = 0; index < modalElements.length; index++) {
-    new M.Modal(modalElements[index]);
-  }
+var collapsibleElements = document.querySelectorAll('.collapsible');
+for (let index = 0; index < collapsibleElements.length; index++) {
+    new M.Collapsible(collapsibleElements[index], {
+        //swipeable: true //FIXME: this fucks up everything
+    });
+}
+
 // var instance = new M.FeatureDiscovery(document.querySelector('.tap-target'));
 
 Chart.defaults.global.defaultFontColor = '#444';
@@ -48,7 +54,7 @@ var myChart = new Chart(ctx, {
                 }
             }]
         },
-        responsive: true,
+        // responsive: true,
         legend: {
             display: false
         }
@@ -59,17 +65,15 @@ var ctx = document.getElementById("myRadarChart").getContext('2d');
 var myRadarChart = new Chart(ctx, {
     type: "radar",
     data: {
-        labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+        labels: ["Attack", "Technique", "Stamina", "Defense", "Power", "Speed"],
         datasets: [{
             label: "My First Dataset",
-            data: [65, 59, 90, 81, 56, 55, 40],
+            data: [65, 59, 10, 81, 56, 55],
             fill: true,
             backgroundColor: "rgba(0, 150, 136, 0.2)",
             borderColor: "teal",
             pointBackgroundColor: "teal",
-            pointBorderColor: "rgba(6, 77, 64)",
-            pointHoverBackgroundColor: "rgba(6, 77, 64)",
-            pointHoverBorderColor: "rgba(6, 77, 64)"
+            pointBorderColor: "rgba(6, 77, 64)"
             // FIXME: Deactivate hover on points in overall view, activate on detail view
         }]
     },
@@ -86,47 +90,19 @@ var myRadarChart = new Chart(ctx, {
                 display: false
             }
         },
-        responsive: true,
+        // responsive: true,
         legend: {
             display: false
-        }
-    }
-});
-
-var ctx = document.getElementById("myRadarChart2").getContext('2d');
-var myRadarChart2 = new Chart(ctx, {
-    type: "radar",
-    data: {
-        labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
-        datasets: [{
-            label: "My First Dataset",
-            data: [65, 59, 90, 81, 56, 55, 40],
-            fill: true,
-            backgroundColor: "rgba(0, 150, 136, 0.2)",
-            borderColor: "teal",
-            pointBackgroundColor: "teal",
-            pointBorderColor: "rgba(6, 77, 64)",
-            pointHoverBackgroundColor: "rgba(6, 77, 64)",
-            pointHoverBorderColor: "rgba(6, 77, 64)"
-            // FIXME: Deactivate hover on points in overall view, activate on detail view
-        }]
-    },
-    options: {
+        },
         elements: {
             line: {
-                tension: 0,
-                borderWidth: 3
+                borderWidth: "3",
+            },
+            point: {
+                borderWidth: "2",
+                radius: "4",
+                hoverRadius: "4"
             }
-        },
-        scale: {
-            ticks: {
-                beginAtZero: true,
-                display: false
-            }
-        },
-        responsive: true,
-        legend: {
-            display: false
         }
     }
 });

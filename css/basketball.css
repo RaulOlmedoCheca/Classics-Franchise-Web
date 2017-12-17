@@ -19,7 +19,7 @@ footer.page-footer {
   margin: 0;
 }
 
-main div#roster.container, main div#stats.container {
+main div#roster.container, main div#stats.container, main div#news.container {
   padding-top: 48px;
 }
 
@@ -41,4 +41,19 @@ main div#roster.container, main div#stats.container {
 
 .footer-copyright a{
   color: white !important;
+}
+
+.card .card-title {
+  font-size: 1.4rem
+}
+
+html.fontawesome-i2svg-active.fontawesome-i2svg-complete body main div#news.container.active div.row div.col.s12.m12.l6 div.card div.card-action {
+  padding: 0;
+  border-top: none;
+}
+
+.collapsible {
+  margin-top: 0;
+  border-left: none;
+  border-right: none;
 }

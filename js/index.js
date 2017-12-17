@@ -1,6 +1,5 @@
 // Setup parallax elements
 var parallaxElements = document.querySelectorAll('.parallax');
-
 for (let index = 0; index < parallaxElements.length; index++) {
   new M.Parallax(parallaxElements[index]);
 }
