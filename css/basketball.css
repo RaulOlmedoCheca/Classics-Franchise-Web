@@ -1,3 +1,7 @@
+body {
+  background-color: #ececec;
+}
+
 nav ul a,
 nav .brand-logo {
   color: #444;
@@ -37,8 +41,4 @@ main div#roster.container, main div#stats.container {
 
 .footer-copyright a{
   color: white !important;
-}
-
-div#stats div.card {
-  background-color:#26a69a;
 }
