@@ -9,15 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css" media="screen,projection" />
     <link rel="stylesheet" type="text/css" href="css/basketball.css" media="screen,projection" />
   </head>
-  <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
-  <script src="js/firebase.js"> </script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
 
-  <body>
+  <body onload="loadCharts();loadPosts();getNextMatch()">
     <header>
       <div class="navbar-fixed">
         <nav class="nav-extended white">
@@ -98,6 +94,7 @@
               </div>
             </div>
           </div>
+          <!-- TODO: query this from the server too ?? -->
           <div class="col s10 m6 l4 offset-s1">
             <div class="card">
               <div class="card-image">
@@ -385,7 +382,7 @@
           <div class="col s12">
             <!-- <div class="card-panel hoverable waves-block waves-effect waves-teal"> -->
             <div class="card-panel">
-              <canvas id="myChart"></canvas>
+              <canvas id="myBarChart"></canvas>
             </div>
           </div>
         </div>
@@ -409,139 +406,12 @@
                   <h5>Next match:</h5>
                 </div>
                 <div class="col m3 l3 offset-s3 offset-m1 offset-l1">
-                  <p>16/05/2018 - 14:00</p>
+                  <p> </p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col s12 m12 l6">
-            <div class="card">
-              <div class="card-content">
-                <span class="card-title">Portland Vs Mataos</span>
-              </div>
-              <div class="card-action">
-                <ul class="collapsible z-depth-0">
-                  <li class="active">
-                    <div class="collapsible-header">
-                      <i class="material-icons">filter_drama</i>Crónica</div>
-                    <div class="collapsible-body grey lighten-3">
-                      <span>Lorem ipsum dolor sit amet.</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="collapsible-header">
-                      <i class="material-icons">place</i>Result</div>
-                    <div class="collapsible-body grey lighten-3">
-                      <span>Lorem ipsum dolor sit amet.</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="collapsible-header">
-                      <i class="material-icons">whatshot</i>Puntos jugador partido</div>
-                    <div class="collapsible-body grey lighten-3">
-                      <span>Lorem ipsum dolor sit amet.</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col s12 m12 l6">
-            <div class="card">
-              <div class="card-content">
-                <span class="card-title">Portland Vs Mataos</span>
-              </div>
-              <div class="card-action">
-                <ul class="collapsible z-depth-0">
-                  <li class="active">
-                    <div class="collapsible-header">
-                      <i class="material-icons">filter_drama</i>Crónica</div>
-                    <div class="collapsible-body grey lighten-3">
-                      <span>Lorem ipsum dolor sit amet.</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="collapsible-header">
-                      <i class="material-icons">place</i>Result</div>
-                    <div class="collapsible-body grey lighten-3">
-                      <span>Lorem ipsum dolor sit amet.</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="collapsible-header">
-                      <i class="material-icons">whatshot</i>Puntos jugador partido</div>
-                    <div class="collapsible-body grey lighten-3">
-                      <span>Lorem ipsum dolor sit amet.</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col s12 m12 l6">
-            <div class="card">
-              <div class="card-content">
-                <span class="card-title">Portland Vs Mataos</span>
-              </div>
-              <div class="card-action">
-                <ul class="collapsible z-depth-0">
-                  <li class="active">
-                    <div class="collapsible-header">
-                      <i class="material-icons">filter_drama</i>Crónica</div>
-                    <div class="collapsible-body grey lighten-3">
-                      <span>Lorem ipsum dolor sit amet.</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="collapsible-header">
-                      <i class="material-icons">place</i>Result</div>
-                    <div class="collapsible-body grey lighten-3">
-                      <span>Lorem ipsum dolor sit amet.</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="collapsible-header">
-                      <i class="material-icons">whatshot</i>Puntos jugador partido</div>
-                    <div class="collapsible-body grey lighten-3">
-                      <span>Lorem ipsum dolor sit amet.</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col s12 m12 l6">
-            <div class="card">
-              <div class="card-content">
-                <span class="card-title">Portland Vs Mataos</span>
-              </div>
-              <div class="card-action">
-                <ul class="collapsible z-depth-0">
-                  <li class="active">
-                    <div class="collapsible-header">
-                      <i class="material-icons">filter_drama</i>Crónica</div>
-                    <div class="collapsible-body grey lighten-3">
-                      <span>Lorem ipsum dolor sit amet.</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="collapsible-header">
-                      <i class="material-icons">place</i>Result</div>
-                    <div class="collapsible-body grey lighten-3">
-                      <span>Lorem ipsum dolor sit amet.</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="collapsible-header">
-                      <i class="material-icons">whatshot</i>Puntos jugador partido</div>
-                    <div class="collapsible-body grey lighten-3">
-                      <span>Lorem ipsum dolor sit amet.</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <!-- TODO: put some loading animation here (some placeholders?)-->
         </div>
       </div>
     </main>
@@ -587,7 +457,10 @@
       </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script src="js/myFirebase.js"> </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
     <script type="text/javascript" src="js/basketball.js"></script>
   </body>
