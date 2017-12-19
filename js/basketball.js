@@ -8,14 +8,82 @@ new M.Sidenav(document.querySelector('.sidenav'));
 
 // TODO: var instance = new M.FeatureDiscovery(document.querySelector('.tap-target'));
 
+function loadRoster() {
+    var players, staff;
+    firebase.database().ref('roster/').once('value').then(function (snapshot) {
+        players = snapshot.child('players/').val();
+        staff = snapshot.child('staff/').val();
+    }).then(function () {
+        for (let index = 0; index < players.length; index++) {
+        var playerCardHTML = '<div class="col s10 m6 l4 offset-s1">' +
+            '<div class="card">' +
+            '<div class="card-image">' +
+                '<img src="images/sample-1.jpg">' + /*FIXME: Cuidadito con la foto*/ /*TODO: meter aqui un feature discovery*/
+                '<a class="btn-floating btn-large halfway-fab waves-effect waves-light teal activator hoverable">' +
+                '<i class="material-icons">add</i>' +
+                '</a>' +
+                '<span class="card-title">' + players[index].number + '</span>' + /*TODO: meter aqui una sombra*/
+            '</div>' +
+            '<div class="card-content">' +
+                '<span class="card-title uppercase">' + players[index].name + '</span>' +
+                '<p class="grey-text">' + players[index].position + '</p>' +
+            '</div>' +
+            '<div class="card-reveal">' +
+                '<span class="card-title grey-text text-darken-4">' + players[index].title +
+                '<i class="material-icons right">close</i>' +
+                '</span>' +
+                '<p>' + players[index].description + '</p>' +
+            '</div>' +
+            '</div>' +
+        '</div>';
+            // Create a new DOM element in the html 
+            var playerCard = document.createElement('div');
+            // Using the post template above set
+            playerCard.innerHTML = playerCardHTML;
+            // Append the post to the desired DOM element
+            document.querySelector('#roster > div:nth-child(1)').appendChild(playerCard);
+        }
+
+        for (let index = 0; index < staff.length; index++) {
+            var staffCardHTML = '<div class="col s10 m6 l4 offset-s1">' +
+            '<div class="card">' +
+              '<div class="card-image">' +
+                '<img src="images/sample-1.jpg">' +
+                '<!-- TODO: meter aqui un feature discovery -->' +
+                '<a class="btn-floating btn-large halfway-fab waves-effect waves-light teal activator hoverable">' +
+                  '<i class="material-icons">add</i>' +
+                '</a>' +
+              '</div>' +
+              '<div class="card-content">' +
+                '<span class="card-title uppercase">' + staff[index].name + '</span>' +
+                '<p class="grey-text">' + staff[index].role + '</p>' +
+              '</div>' +
+              '<div class="card-reveal">' +
+                '<span class="card-title grey-text text-darken-4">' + staff[index].title +
+                  '<i class="material-icons right">close</i>' +
+                '</span>' +
+                '<p>' + staff[index].description + '</p>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+          // Create a new DOM element in the html 
+          var staffCard = document.createElement('div');
+          // Using the post template above set
+          staffCard.innerHTML = staffCardHTML;
+          // Append the post to the desired DOM element
+          document.querySelector('#roster > div:nth-child(2)').appendChild(staffCard);
+        }
+
+        
+    });
+}
+
 function loadCharts() {
     // Query the firebase database to get the values of the chart
     var barChart, radarChart;
     firebase.database().ref('charts/').once('value').then(function (snapshot) {
-    // TODO: creo que esto me lo he inventado -> We perform one query on the server to avoid two connections to the database
-    barChart = snapshot.val();
-    radarChart = barChart.radar;
-    barChart = barChart.bars;
+    barChart = snapshot.child('bars/').val();
+    radarChart = snapshot.child('radar/').val();
 
     }).then(function () {
         //TODO: rewrite this on each chart config 
@@ -122,23 +190,32 @@ function loadPosts() {
                         '<ul class="collapsible z-depth-0">' +
                           '<li class="' + activeClass + '">' + //Set active if is the first of the list
                             '<div class="collapsible-header">' +
-                              '<i class="material-icons">filter_drama</i>Crónica</div>' +
+                              '<i class="material-icons">keyboard_arrow_right</i>Crónica</div>' +
                             '<div class="collapsible-body grey lighten-3">' +
                               '<span>' + gamePosts[index].matchChronicle + '</span>' +
                             '</div>' +
                           '</li>' +
                           '<li>' +
                             '<div class="collapsible-header">' +
-                              '<i class="material-icons">place</i>Result</div>' +
+                              '<i class="material-icons">keyboard_arrow_right</i>Result</div>' +
                             '<div class="collapsible-body grey lighten-3">' +
                               '<span>' + gamePosts[index].matchResult + '</span>' +
                             '</div>' +
                           '</li>' +
                           '<li>' +
                             '<div class="collapsible-header">' +
-                              '<i class="material-icons">whatshot</i>Puntos jugador partido</div>' +
+                              '<i class="material-icons">keyboard_arrow_right</i>Puntos jugador partido</div>' +
                             '<div class="collapsible-body grey lighten-3">' +
-                              '<span>' + gamePosts[index].matchPoints + '</span>' +
+                              '<table class="bordered">' +
+                                '<thead>' +
+                                  '<tr>' +
+                                    '<th>Name</th>' +
+                                    '<th>Points</th>' +
+                                  '</tr>' +
+                                '</thead>' +
+                                '<tbody>' +
+                                '</tbody>' +
+                              '</table>' +
                             '</div>' +
                           '</li>' +
                         '</ul>' +
@@ -148,17 +225,32 @@ function loadPosts() {
 
             // After the first card, no other card will have the main collapsible active
             activeClass = "";
-
             // Create a new DOM element in the html 
             var gamePost = document.createElement('div');
             // Using the post template above set
             gamePost.innerHTML = gamePostHTML;
             // Append the post to the desired DOM element
             document.querySelector('#news > div:nth-child(1)').appendChild(gamePost);
-            // Make the sections collapsibles 
-            new M.Collapsible(gamePost.firstElementChild.firstElementChild.lastElementChild.firstElementChild);
+            // Make the sections collapsibles
+            var elem = gamePost.firstElementChild.firstElementChild.lastElementChild.firstElementChild; 
+            new M.Collapsible(elem, {
+                // TODO: animate arrows to change on collapsible open
+                // onOpenStart:,
+                // onCloseStart: 
+            });
+
+            // Create the table with the points per game and player and append it to the section wanted
+            for (let jindex = 0; jindex < gamePosts[index].matchPoints.length; jindex++) {
+                var tablePointsHTML =
+                    '<td>' + gamePosts[index].matchPoints[jindex].player + '</td>' +
+                    '<td>' + gamePosts[index].matchPoints[jindex].points + '</td>';
+                var tablePoints = document.createElement('tr');
+                tablePoints.innerHTML = tablePointsHTML;
+                elem.lastElementChild.lastElementChild.lastElementChild.lastElementChild.appendChild(tablePoints);                
+            }
         }
     });
+    // TODO: split the table generation in to another query??
 // TODO: in a future, add a load more button to retrieve more shit from the server
 }
 
@@ -170,3 +262,6 @@ function getNextMatch() {
         document.querySelector('div.row div.col.m3.l3.offset-s3.offset-m1.offset-l1 p').firstChild.textContent = nextMatch;
     });
 }
+
+// TODO: revisar queries para que no este pillando mas de lo necesario
+
