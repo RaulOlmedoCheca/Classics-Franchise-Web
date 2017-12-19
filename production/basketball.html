@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- TODO: implement animations when loading this pages -->
+
+  <head>
+    <title>Basketball</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/basketball.css" media="screen,projection" />
+  </head>
+
+  <body onload="loadRoster();loadCharts();loadPosts();getNextMatch()">
+    <header>
+      <div class="navbar-fixed">
+        <nav class="nav-extended white">
+          <div class="nav-wrapper container">
+            <a id="logo-container" href="index.html" class="brand-logo">Classics Franchise</a>
+            <ul class="right hide-on-med-and-down">
+              <!-- Links on desktop nav -->
+              <li>
+                <!-- <a class="uppercase" href="#">Football</a> -->
+              </li>
+              <li>
+                <!-- <a class="uppercase" href="#">Indoor football</a> -->
+              </li>
+              <li class="active">
+                <a class="uppercase" href="basketball.html">Basketball</a>
+              </li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+              <i class="material-icons">menu</i>
+            </a>
+          </div>
+          <!-- TODO: do this sticky (with pushpin) && scrollspy-->
+          <!-- TODO: add shadow like on the navbar -->
+          <div class="nav-content container">
+            <ul class="tabs">
+              <li class="tab">
+                <a class="active" href="#roster">Roster</a>
+              </li>
+              <li class="tab">
+                <a href="#stats">Stats</a>
+              </li>
+              <li class="tab">
+                <a href="#news">News</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <ul id="nav-mobile" class="sidenav">
+        <!-- Links on mobile nav -->
+        <li>
+          <!-- <a class="uppercase" href="#">Football</a> -->
+        </li>
+        <li>
+          <!-- <a class="uppercase" href="#">Indoor football</a> -->
+        </li>
+        <li>
+          <!-- TODO: mark as active on the sidenav -->
+          <a class="uppercase active" href="basketball.html">Basketball</a>
+        </li>
+      </ul>
+    </header>
+    <main>
+      <div id="roster" class="container">
+        <div class="row">
+          <!-- TODO: centrar el nombre en mobile (classics) y esto tambien -->
+          <h5 class="uppercase">Players</h5>
+        </div>
+        <div class="row">
+          <!-- TODO: centrar el nombre en mobile (classics) y esto tambien -->
+          <h5 class="uppercase">Head Coach</h5>
+        </div>
+      </div>
+      <div id="stats" class="container">
+        <div class="row">
+          <h5 class="uppercase">Points per game</h5>
+          <!-- TODO: make this responsive (chart-container of chart.js) -->
+          <!-- TODO: haciendo click en esto se abre una nueva pagina con las stats de cada uno por partido -->
+          <div class="col s12">
+            <!-- <div class="card-panel hoverable waves-block waves-effect waves-teal"> -->
+            <div class="card-panel">
+              <canvas id="myBarChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <h5 class="uppercase">Overall team skills</h5>
+          <div class="col s12">
+            <!-- TODO: haciendo click en esto se abre una nueva pagina con las skills de cada uno -->
+            <!-- <div class="card-panel hoverable waves-block waves-effect waves-teal"> -->
+            <div class="card-panel">
+              <canvas id="myRadarChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="news" class="container">
+        <div class="row">
+          <div class="col s12 m12 l12">
+            <div class="card-panel white-text teal darken-1">
+              <div class="row">
+                <div class="col m3 l3 offset-s3 offset-m3 offset-l3">
+                  <h5>Next match:</h5>
+                </div>
+                <div class="col m3 l3 offset-s3 offset-m1 offset-l1">
+                  <p> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- TODO: put some loading animation here (some placeholders?)-->
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer teal">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Title</h5>
+            <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+              et dolore magna aliqua. </p>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Title</h5>
+            <ul>
+              <li>
+                <a class="white-text" href="#!">Link 1</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Title</h5>
+            <ul>
+              <li>
+                <a class="white-text" href="#!">Link</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          <i class="fas fa-code"></i>
+          <span>with</span>
+          <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+          <div class="right">
+            <span>See this project on</span>
+            <a href="https://github.com/RaulOlmedoCheca/Classics-Franchise-Web">
+              <i class="fab fa-github fa-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script src="js/myFirebase.min.js"> </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+    <script type="text/javascript" src="js/basketball.js"></script>
+  </body>
+
+</html>

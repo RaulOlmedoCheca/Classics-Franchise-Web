@@ -1,0 +1,59 @@
+body {
+  background-color: #ececec;
+}
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: teal;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+main div#roster.container, main div#stats.container, main div#news.container {
+  padding-top: 48px;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active{
+  color: teal;
+}
+
+.indicator {
+  background-color: teal !important;
+}
+      
+.tabs .tab a {
+  color: #80cbc4;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.footer-copyright a{
+  color: white !important;
+}
+
+.card .card-title {
+  font-size: 1.4rem
+}
+
+html.fontawesome-i2svg-active.fontawesome-i2svg-complete body main div#news.container.active div.row div.col.s12.m12.l6 div.card div.card-action {
+  padding: 0;
+  border-top: none;
+}
+
+.collapsible {
+  margin-top: 0;
+  border-left: none;
+  border-right: none;
+}
